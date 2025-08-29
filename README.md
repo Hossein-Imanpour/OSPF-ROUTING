@@ -5,7 +5,7 @@
 ---
 
 ## 🖼️ توپولوژی شبکه
-![Network Topology](ospf-routing.png)
+
 <img width="1348" height="422" alt="ospf-routing" src="https://github.com/user-attachments/assets/0f418af3-f17a-4a80-9888-ea6b5cf15abf" />
 
 ---
