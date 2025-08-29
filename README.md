@@ -1,17 +1,17 @@
 # OSPF Routing Project
 
-این پروژه یک شبیه‌سازی شبکه در نرم‌افزار **Cisco Packet Tracer** است که در آن از پروتکل **OSPF (Open Shortest Path First)** برای مسیریابی بین چندین شبکه محلی (LAN) استفاده شده است.
+This project is a network simulation in **Cisco Packet Tracer** where the **OSPF (Open Shortest Path First)** protocol is used for routing between multiple Local Area Networks (LANs).
 
 ---
 
-## 🖼️ توپولوژی شبکه
+## 🖼️ Network Topology
 
 <img width="1348" height="422" alt="ospf-routing" src="https://github.com/user-attachments/assets/0f418af3-f17a-4a80-9888-ea6b5cf15abf" />
 
 ---
 
-## 📌 مشخصات شبکه‌ها
-در این پروژه سه شبکه محلی (LAN) طراحی شده‌اند که از طریق سه روتر به هم متصل هستند:
+## 📌 Network Details
+In this project, three LANs are designed and connected through three routers:
 
 - **LAN1 (192.168.10.0/24)**
   - Laptop1 → `192.168.10.1`
@@ -27,7 +27,7 @@
 
 ---
 
-## 🌐 اینترفیس‌های روترها
+## 🌐 Router Interfaces
 
 ### Router R1
 - `Gig0/0/0` → `192.168.100.1`
@@ -46,8 +46,8 @@
 
 ---
 
-## ⚙️ تنظیمات OSPF
-روی هر سه روتر، OSPF با **Process ID = 1** راه‌اندازی شده و شبکه‌ها به صورت زیر معرفی شده‌اند:
+## ⚙️ OSPF Configuration
+On all three routers, OSPF is enabled with **Process ID = 1**, and the following networks are advertised:
 
 ```bash
 router ospf 1
@@ -58,8 +58,15 @@ router ospf 1
  network 192.168.90.0 0.0.0.255 area 0
  network 192.168.100.0 0.0.0.255 area 0
 
-
 ```
-## ⚙️ تنظیمات STP(spanning-tree protocol)
+## ⚙️ STP (Spanning Tree Protocol) Configuration
+
+On the switches in this topology, the **STP protocol** has been enabled in order to:
+- Prevent network loops.  
+- Establish faster connectivity using **PortFast**.  
+- Increase security and control STP traffic on ports using **BPDU Guard**.  
+
+### Example configuration on switches:
 ```bash
- روی switch های این توپولوژی هم  STP فعال شده برای  PORTFAST & BPDU  که برای برقراری سریع اتصال در صورت قطع شدن و کنترل ترافیک STP از طریق BPDUguard
+spanning-tree portfast default
+spanning-tree bpduguard enable
