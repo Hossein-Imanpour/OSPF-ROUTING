@@ -60,5 +60,6 @@ router ospf 1
 
 
 ```
-
-## روی switch های این توپولوژی هم  STP فعال شده برای  PORTFAST & BPDU  که برای برقراری سریع اتصال در صورت قطع شدن و کنترل ترافیک STP از طریق BPDUguard
+## ⚙️ تنظیمات STP(spanning-tree protocol)
+```bash
+ روی switch های این توپولوژی هم  STP فعال شده برای  PORTFAST & BPDU  که برای برقراری سریع اتصال در صورت قطع شدن و کنترل ترافیک STP از طریق BPDUguard
