@@ -57,3 +57,7 @@ router ospf 1
  network 192.168.80.0 0.0.0.255 area 0
  network 192.168.90.0 0.0.0.255 area 0
  network 192.168.100.0 0.0.0.255 area 0
+
+
+
+## روی switch های این توپولوژی هم  STP فعال شده برای  PORTFAST & BPDU  که برای برقراری سریع اتصال در صورت قطع شدن و کنترل ترافیک STP از طریق BPDUguard 
